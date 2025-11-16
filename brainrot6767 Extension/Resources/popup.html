@@ -6,6 +6,95 @@
     <script type="module" src="popup.js"></script>
 </head>
 <body>
-    <strong>Hello World!</strong>
+    <div class="container">
+        <h1>Focus Filter</h1>
+        <div class="settings">
+            <div class="youtube-section">
+                <h2>YouTube</h2>
+                <div class="setting-item">
+                    <label class="toggle-container">
+                        <input type="checkbox" id="youtube-hide-shorts-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <div class="setting-info">
+                        <span class="setting-label">Hide Shorts</span>
+                        <span class="setting-desc">Removes YouTube Shorts from homepage, sidebar, and carousels</span>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label class="toggle-container">
+                        <input type="checkbox" id="youtube-search-only-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <div class="setting-info">
+                        <span class="setting-label">Search Only Mode</span>
+                        <span class="setting-desc">Shows only the search bar, hides everything else (including videos)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="setting-item">
+                <label class="toggle-container">
+                    <input type="checkbox" id="instagram-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+                <div class="setting-info">
+                    <span class="setting-label">Instagram: Search & Messages</span>
+                    <span class="setting-desc">Shows only search bar and messages, hides feed</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="whitelist-section" id="whitelist-section">
+            <h2>Instagram Story Whitelist</h2>
+            <p class="whitelist-desc">Only stories from these usernames will be shown</p>
+            <div class="whitelist-input-container">
+                <input type="text" id="username-input" placeholder="Enter username (e.g., username)" class="username-input">
+                <button id="add-username-btn" class="add-btn">Add</button>
+            </div>
+            <div id="username-list" class="username-list"></div>
+        </div>
+
+        <div class="blocklist-section" id="blocklist-section">
+            <h2>Blocked Websites</h2>
+            <p class="blocklist-desc">These websites will be completely blocked</p>
+            <div class="blocklist-input-container">
+                <input type="text" id="url-input" placeholder="Enter URL or domain (e.g., linkedin.com)" class="url-input">
+                <button id="add-url-btn" class="add-btn">Add</button>
+            </div>
+            <div id="url-list" class="url-list"></div>
+        </div>
+
+        <div class="lock-section" id="lock-section">
+            <h2>Extension Lock</h2>
+            <div id="lock-status" class="lock-status"></div>
+            <div id="lock-controls" class="lock-controls">
+                <div class="lock-input-container">
+                    <input type="email" id="friend-email-input" placeholder="Friend's email address" class="friend-email-input">
+                    <button id="lock-btn" class="lock-btn">Lock Extension</button>
+                </div>
+            </div>
+            <div id="unlock-controls" class="unlock-controls" style="display: none;">
+                <p class="lock-desc">Extension is locked. Enter passkey to unlock.</p>
+                <div class="lock-input-container">
+                    <input type="text" id="unlock-passkey-input" placeholder="Enter 6-digit passkey" class="passkey-input" maxlength="6">
+                    <button id="unlock-btn" class="unlock-btn">Unlock</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Modal -->
+    <div id="password-modal" class="password-modal">
+        <div class="password-modal-content">
+            <h3>Enter Password</h3>
+            <p class="password-desc">Password required to unlock this setting</p>
+            <input type="password" id="password-input" class="password-input" placeholder="Enter password">
+            <div class="password-modal-buttons">
+                <button id="password-cancel-btn" class="password-btn password-btn-cancel">Cancel</button>
+                <button id="password-submit-btn" class="password-btn password-btn-submit">Confirm</button>
+            </div>
+            <div id="password-error" class="password-error"></div>
+        </div>
+    </div>
 </body>
 </html>

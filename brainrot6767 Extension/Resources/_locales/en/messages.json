@@ -1,10 +1,10 @@
 {
     "extension_name": {
-        "message": "brainrot6767 Extension",
+        "message": "Focus Filter",
         "description": "The display name for the extension."
     },
     "extension_description": {
-        "message": "This is brainrot6767 Extension. You should tell us what your extension does here.",
+        "message": "Filters distracting content on YouTube (Shorts) and Instagram (home feed) to help you stay focused.",
         "description": "Description of what the extension does."
     }
 }
